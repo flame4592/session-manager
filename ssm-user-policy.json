@@ -8,7 +8,7 @@
                 "ssm:TerminateSession",
                 "ssm:ResumeSession",
                 "ssm:DescribeSessions",
-                "ssm:GetConnectionStatus"
+                "ssm:GetConnectionStatus",
                 "ssm:SendCommand"                                                      
             ],
             "Resource": "arn:aws:ec2:*:*:instance/*"
@@ -33,6 +33,22 @@
             "Resource": [
                 "arn:aws:ssm:*:*:session/${aws:username}-*"
             ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:DescribeInstances",
+                "ec2:DescribeImages",
+                "ec2:DescribeKeyPairs",
+                "ec2:DescribeSecurityGroups",
+                "ec2:DescribeTags",
+                "ec2:DescribeVpcs",
+                "ec2:DescribeSubnets",
+                "ec2:DescribeVolumes",
+                "ec2:DescribeSnapshots",
+                "ec2:DescribeAddresses"
+            ],
+            "Resource": "*"
         }
     ]
 }
