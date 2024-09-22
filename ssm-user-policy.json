@@ -11,7 +11,10 @@
                 "ssm:GetConnectionStatus",
                 "ssm:SendCommand"                                                      
             ],
-            "Resource": "arn:aws:ec2:*:*:instance/*"
+            "Resource": [
+                "arn:aws:ec2:*:*:instance/*",
+                "arn:aws:ssm:*::document/AWS-StartPortForwardingSession"
+            ]
         },
         {
             "Effect": "Allow",
